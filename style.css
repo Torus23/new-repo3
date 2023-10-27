@@ -1,0 +1,58 @@
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;    
+  }
+  
+  .flex-container > div {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 40%;
+    border-radius: 5px;
+    padding: 2px 16px;
+    flex: 0 1 24%;
+    box-sizing: border-box;
+    margin: 1rem .25em;
+  }
+  .flex-container > div:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+
+  h2{    
+    color: purple;
+    margin: 0%;
+    padding: 1em;
+    text-align: center;
+  }
+
+  body{
+    margin: 0%;
+  
+  }
+  nav{
+    background-color: blue;
+     margin: 0%;
+     font-size: xx-large;
+     padding: 5px;
+     border-style: solid;
+     text-align: center;
+  }
+  h1{    
+    color: white;
+    margin: 0%;
+  }
+  .center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+   }
+  .price{
+    display: block;
+    color: red;
+    text-align: center;
+  }
+  img{
+    max-width: 50%;
+    max-height: 50%
+    }
+ 
