@@ -14,8 +14,9 @@
     $username = "adminlogan";
     $password = "Secret123456";
     $db_name = "shopping";
-    $conn = mysqli_init();    
-    mysqli_real_connect($conn, $servername, $username, $password, $db_name, 3306);
+    $conn = mysqli_init();
+    mysqli_ssl_set($con,NULL,NULL, "/DigiCertGlobalRootCA.crt.pem", NULL, NULL);
+    mysqli_real_connect($conn, $servername, $username, $password, $db_name, 3306,MYSQLI_CLIENT_SSL));
     if (mysqli_connect_errno($conn)) {
     die('Failed to connect to MySQL: '.mysqli_connect_error());
 }
