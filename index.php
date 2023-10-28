@@ -10,13 +10,13 @@
 <body>
 <nav><h1>Logan's Woolworths</h1></nav>
 <?php
-    $servername = "db-php.mysql.database.azure.com";
-    $username = "adminlogan";
-    $password = "Secret123456";
+    $host = "db-php.mysql.database.azure.com";
+    $username = "vetrkmyqef";
+    $password = "2S2Z7QO07PVP81MF$";
     $db_name = "shopping";
     $conn = mysqli_init();
-    mysqli_ssl_set($con,NULL,NULL, "/DigiCertGlobalRootCA.crt.pem", NULL, NULL);
-    mysqli_real_connect($conn, $servername, $username, $password, $db_name, 3306,MYSQLI_CLIENT_SSL));
+    mysqli_ssl_set($con,NULL,NULL, "DigiCertGlobalRootCA.crt.pem", NULL, NULL);
+    mysqli_real_connect($conn, $host, $username, $password, $db_name, 3306,MYSQLI_CLIENT_SSL));
     if (mysqli_connect_errno($conn)) {
     die('Failed to connect to MySQL: '.mysqli_connect_error());
 }
