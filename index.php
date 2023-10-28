@@ -16,7 +16,7 @@
     $db_name = "shopping";
     $conn = mysqli_init();
     
-    mysqli_real_connect($conn, $servername, $username, $password, $db_name, 3306);
+    $link=mysqli_real_connect($conn, $servername, $username, $password, $db_name, 3306);
     if (mysqli_connect_errno($conn)) {
     die('Failed to connect to MySQL: '.mysqli_connect_error());
 }
@@ -27,7 +27,7 @@
     //};
     $sql = "SELECT * FROM products";
 
-    $result = $con->query($sql);
+    $result = mysqli_query($link,$sql);
 
     class Product{
         public $price;
@@ -51,10 +51,10 @@
     $array =array();
     
     if(!$result){
-        die("Failed running SQL statement: " .$con->error);
+        die("Failed running SQL statement: " .$link->error);
     };
 
-    while($row=$result->fetch_assoc()){
+    while($row=$result->mysqli_fetch_assoc()){
         $product=new Product($row['title'],$row['imageID'],$row['description'],$row['price']);
         array_push($array,$product);
     }
@@ -70,7 +70,7 @@
         }
         echo"</div>";
     }
-    mysqli_close($conn);
+    mysqli_close($link);
 
 ?>
 </body>
