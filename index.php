@@ -14,9 +14,8 @@
     $username = "adminlogan";
     $password = "Secret123456";
     $db_name = "shopping";
-    $conn = mysqli_init();
-    
-    $link=mysqli_real_connect($conn, $servername, $username, $password, $db_name, 3306);
+    $conn = mysqli_init();    
+    mysqli_real_connect($conn, $servername, $username, $password, $db_name, 3306);
     if (mysqli_connect_errno($conn)) {
     die('Failed to connect to MySQL: '.mysqli_connect_error());
 }
@@ -27,7 +26,7 @@
     //};
     $sql = "SELECT * FROM products";
 
-    $result = mysqli_query($link,$sql);
+    $result = $con->query($sql);
 
     class Product{
         public $price;
@@ -70,7 +69,7 @@
         }
         echo"</div>";
     }
-    mysqli_close($link);
+   mysqli_close($conn);
 
 ?>
 </body>
