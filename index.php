@@ -51,10 +51,10 @@
     $array =array();
     
     if(!$result){
-        die("Failed running SQL statement: " .$con->error);
+        die("Failed running SQL statement: " .$link->error);
     };
 
-    while($row=$result->fetch_assoc()){
+    while($row=$result->mysqli_fetch_assoc()){
         $product=new Product($row['title'],$row['imageID'],$row['description'],$row['price']);
         array_push($array,$product);
     }
@@ -70,7 +70,7 @@
         }
         echo"</div>";
     }
-    mysqli_close($conn);
+    mysqli_close($link);
 
 ?>
 </body>
