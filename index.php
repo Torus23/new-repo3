@@ -17,17 +17,17 @@
     $port=5432;
 
     $conn = pg_connect("host=$host port=$port dbname=$database user=$user password=$password") or die("Failed to create connection to database: ". pg_last_error(). "<br/>");
-    print "Successfully created connection to database.<br/>";
+   // print "Successfully created connection to database.<br/>";
 
     $query = "DROP TABLE IF EXISTS products;";
 	pg_query($conn, $query) 
 		or die("Encountered an error when executing given sql statement: ". pg_last_error(). "<br/>");
-	print "Finished dropping table (if existed).<br/>";
+	//print "Finished dropping table (if existed).<br/>";
 
     $query1 = "CREATE TABLE products (productID int NOT NULL PRIMARY KEY, title text NOT NULL, description text NOT NULL, price money NULL, imageID text NOT NULL);";
 	pg_query($conn, $query1) 
 		or die("Encountered an error when executing given sql statement: ". pg_last_error(). "<br/>");
-	print "Finished creating table.<br/>";
+	//print "Finished creating table.<br/>";
 
     $query2="INSERT INTO products (productID, title, description, price, imageID) VALUES
     (1, 'Sony PlayStation 5 Console', 'Experience lightning-fast loading with an ultra-high-speed SSD, deeper immersion with support for haptic feedback, adaptive triggers and 3D Audio, and an all-new generation of incredible PlayStation game', '834.00', 'ps5.jpg'),
