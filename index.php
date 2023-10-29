@@ -71,7 +71,7 @@
             return (string) "<div>"."<h2>".$this->title."</h2>"."</div>".
                             "<div>"."<img src=\"".$this->imageID."\"class=\"center\">"."</div>".
                             "<div>"."<p>".$this->description."</p>"."</div>".
-                            "<div>"."<p class=\"price\">"."$".$this->price."</p>"."</div>";
+                            "<div>"."<p class=\"price\">".$this->price."</p>"."</div>";
         }
     }
     $array =array();
