@@ -62,5 +62,5 @@ jobs:
         with:
           app-name: 'web-php-task-test'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_FFFED76201314E40A474B958C4D58796 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_FC90FCE9DCCB44F4B8E59FD21C23A579 }}
           package: .
